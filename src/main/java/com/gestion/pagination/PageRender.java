@@ -13,10 +13,15 @@ import java.util.List;
 public class PageRender<T>{
 
     private String url;
+
     private Page<T> page;
+
     private int totalPage;
+
     private int numberOfElementPage;
+
     private int actualPage;
+
     private List<PageItem> pages;
 
     private PageRender(String url, Page<T> page) {
@@ -52,5 +57,17 @@ public class PageRender<T>{
         for (int i = 0; i < from; i++) {
             pages.add(new PageItem(from + 1, actualPage == from + i));
         }
+    }
+
+    public boolean isLast() {
+        return page.isLast();
+    }
+
+    public boolean isHasNext() {
+        return page.hasNext();
+    }
+
+    public boolean isHasPrevious() {
+        return page.hasPrevious();
     }
 }
