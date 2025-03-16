@@ -1,11 +1,15 @@
 package com.gestion.pagination;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.domain.Page;
 import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
+@Getter
+@Setter
 public class PageRender<T>{
 
     private String url;
