@@ -24,7 +24,7 @@ public class PageRender<T>{
 
     private List<PageItem> pages;
 
-    private PageRender(String url, Page<T> page) {
+    public PageRender(String url, Page<T> page) {
         this.url = url;
         this.page = page;
         this.pages = new ArrayList<PageItem>();
