@@ -1,7 +1,10 @@
 package com.gestion.controller;
 
+import com.gestion.entity.Employee;
+import com.gestion.pagination.PageRender;
 import com.gestion.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
@@ -15,9 +18,16 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping({"/","/listar",""})
-    public String employeeList(@RequestParam(name = "page", defaultValue = 0) int page, Model model) {
+    @GetMapping({"/","/register",""})
+    public String employeeList(@RequestParam(name = "page", defaultValue = "0") int page, Model model) {
 
         Pageable pageRequest = PageRequest.of(page, 5);
+        Page<Employee> employees = employeeService.findAll(pageRequest);
+        PageRender<Employee> pageRender = new PageRender<>("/list", employees);
+        model.addAttribute("title", "Employee Register");
+        model.addAttribute("employees", employees);
+        model.addAttribute("page", pageRender);
+
+        return "register";
     }
 }
