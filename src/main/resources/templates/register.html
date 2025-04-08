@@ -7,6 +7,40 @@
 
         <header th:replace="Base/layout :: header"></header>
 
+        <div class="py-4 ml-5 mr-5">
+            <div class="card bg-light">
+                <div class="card-header" th:text="${title}"></div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Email</th>
+                                <th>Fecha</th>
+                                <th>Telefono</th>
+                                <th>Sexo</th>
+                                <th>Salario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="employee : ${employees}">
+                                <td th:text="${employee.id}"></td>
+                                <td th:text="${employee.name}"></td>
+                                <td th:text="${employee.lastName}"></td>
+                                <td th:text="${employee.email}"></td>
+                                <td th:text="${employee.date}"></td>
+                                <td th:text="${employee.phone}"></td>
+                                <td th:text="${employee.sex}"></td>
+                                <td th:text="${employee.salary}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
         <footer th:replace="Base/layout :: footer"></footer>
     </body>
 </html>
