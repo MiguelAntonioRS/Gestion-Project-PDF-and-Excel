@@ -23,7 +23,7 @@ public class EmployeeController {
 
         Pageable pageRequest = PageRequest.of(page, 5);
         Page<Employee> employees = employeeService.findAll(pageRequest);
-        PageRender<Employee> pageRender = new PageRender<>("/list", employees);
+        PageRender<Employee> pageRender = new PageRender<>("/register", employees);
         model.addAttribute("title", "Employee Register");
         model.addAttribute("employees", employees);
         model.addAttribute("page", pageRender);
