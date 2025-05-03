@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
-
     <nav th:fragment="pager">
         <ul class="pagination">
             <li class="page-item" th:class="${page.first? 'page-item disabled' : 'page-item'}">
@@ -10,6 +9,5 @@
             </li>
         </ul>
     </nav>
-
 </body>
 </html>
