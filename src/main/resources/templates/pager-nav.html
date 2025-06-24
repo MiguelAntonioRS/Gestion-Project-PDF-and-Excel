@@ -4,8 +4,8 @@
     <nav th:fragment="pager">
         <ul class="pagination">
             <li class="page-item" th:class="${page.first? 'page-item disabled' : 'page-item'}">
-                <span class="page-link" th:if="${page.first}">First</span>
-                <a class="page-link" th:if="${not page.first}" th:href="@{${page.url}(page=0)}">First</a>
+                <span class="page-link" th:if="${page.first}">Primera</span>
+                <a class="page-link" th:if="${not page.first}" th:href="@{${page.url}(page=0)}">Primera</a>
             </li>
             <li class="page-item" th:class="${not page.hasPrevious? 'page-item disabled': 'page-item'}">
                 <span class="page-link" th:if="${page.first}">&laquo;</span>

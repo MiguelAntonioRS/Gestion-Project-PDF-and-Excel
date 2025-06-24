@@ -21,10 +21,10 @@ public class EmployeeController {
     @GetMapping({"/","/register",""})
     public String employeeList(@RequestParam(name = "page", defaultValue = "0") int page, Model model) {
 
-        Pageable pageRequest = PageRequest.of(page, 1);
+        Pageable pageRequest = PageRequest.of(page, 5);
         Page<Employee> employees = employeeService.findAll(pageRequest);
         PageRender<Employee> pageRender = new PageRender<>("/register", employees);
-        model.addAttribute("title", "Employee Register");
+        model.addAttribute("title", "Listado de Empleados");
         model.addAttribute("employees", employees);
         model.addAttribute("page", pageRender);
 
