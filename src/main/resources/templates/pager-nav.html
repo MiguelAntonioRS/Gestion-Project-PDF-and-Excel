@@ -15,6 +15,10 @@
                 <span class="page-link" th:if="${item.actually}" th:text="${item.number}"></span>
                 <a class="page-link" th:if="${not item.actually}" th:href="@{${page.url}(page=${item.number - 1})}" th:text="${item.number}">&laquo;</a>
             </li>
+            <li class="page-item" th:class="${not page.hasNext? 'page-item disabled': 'page-item'}">
+                <span class="page-link" th:if="${not page.hasNext}">&raquo;</span>
+                <a class="page-link" th:if="${page.hasNext}" th:href="@{${page.url}(page=${page.actualPage})}">&raquo;</a>
+            </li>
         </ul>
     </nav>
 </body>
