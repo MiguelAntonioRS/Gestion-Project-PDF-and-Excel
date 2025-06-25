@@ -11,9 +11,9 @@
                 <span class="page-link" th:if="${page.hasPrevious}">&laquo;</span>
                 <a class="page-link" th:if="${page.hasPrevious}" th:href="@{${page.url}(page=${page.actualPage - 1})}">&laquo;</a>
             </li>
-            <li class="page-item" th:each="item ${page.pages}" th:class="${item.actually? 'page-item disabled': 'page-item'}">
-                <span class="page-link" th:if="${item.actually}">&laquo;</span>
-                <a class="page-link" th:if="${page.hasPrevious}" th:href="@{${page.url}(page=${page.actualPage - 1})}">&laquo;</a>
+            <li class="page-item" th:each="item : ${page.pages}" th:class="${item.actually? 'page-item active': 'page-item'}">
+                <span class="page-link" th:if="${item.actually}" th:text="${item.number}"></span>
+                <a class="page-link" th:if="${page.hasPrevious}" th:href="@{${page.url}(page=${page.number - 1})} " th:text="${item.number}">&laquo;</a>
             </li>
         </ul>
     </nav>
