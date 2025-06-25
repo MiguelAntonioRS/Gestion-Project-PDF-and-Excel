@@ -86,12 +86,12 @@ public class EmployeeController {
         if (id > 0) {
             employee = employeeService.findById(id);
             if (employee == null) {
-                flash.addFlashAttribute("Error", "El ID del empleado no existe en la base de datos");
+                flash.addFlashAttribute("error", "El ID del empleado no existe en la base de datos");
                 return "redirect:/register";
             }
         }
         else {
-            flash.addFlashAttribute("Error", "El ID del empleado no puede ser cero");
+            flash.addFlashAttribute("error", "El ID del empleado no puede ser cero");
             return "redirect:/register";
         }
 
