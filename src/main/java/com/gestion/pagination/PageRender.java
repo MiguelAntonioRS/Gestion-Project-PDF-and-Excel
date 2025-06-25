@@ -29,9 +29,9 @@ public class PageRender<T>{
         this.page = page;
         this.pages = new ArrayList<>();
 
-        int numberOfElementPage = 5;
-        int totalPage = page.getTotalPages();
-        int actualPage = page.getNumber() + 1; // Ajuste: ahora es 1-based
+        this.numberOfElementPage = 5;
+        this.totalPage = page.getTotalPages();
+        this.actualPage = page.getNumber() + 1; // Ajuste: ahora es 1-based
 
         int from, to;
 
