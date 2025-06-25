@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
     <nav th:fragment="pager">
@@ -13,7 +13,7 @@
             </li>
             <li class="page-item" th:each="item : ${page.pages}" th:class="${item.actually? 'page-item active': 'page-item'}">
                 <span class="page-link" th:if="${item.actually}" th:text="${item.number}"></span>
-                <a class="page-link" th:if="${page.hasPrevious}" th:href="@{${page.url}(page=${page.number - 1})} " th:text="${item.number}">&laquo;</a>
+                <a class="page-link" th:if="${not item.actually}" th:href="@{${page.url}(page=${item.number - 1})} " th:text="${item.number}">&laquo;</a>
             </li>
         </ul>
     </nav>

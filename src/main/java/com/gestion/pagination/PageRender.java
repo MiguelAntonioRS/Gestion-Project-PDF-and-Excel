@@ -27,38 +27,36 @@ public class PageRender<T>{
     public PageRender(String url, Page<T> page) {
         this.url = url;
         this.page = page;
-        this.pages = new ArrayList<PageItem>();
+        this.pages = new ArrayList<>();
 
-        numberOfElementPage = 5;
-        totalPage = page.getTotalPages();
-        actualPage = page.getNumber();
+        int numberOfElementPage = 5;
+        int totalPage = page.getTotalPages();
+        int actualPage = page.getNumber() + 1; // Ajuste: ahora es 1-based
 
         int from, to;
 
         if (totalPage <= numberOfElementPage) {
-
             from = 1;
             to = totalPage;
         } else {
-            if (actualPage <= numberOfElementPage/2) {
-
+            if (actualPage <= numberOfElementPage / 2) {
                 from = 1;
                 to = numberOfElementPage;
-            } else if (actualPage >= totalPage - numberOfElementPage/2) {
-
+            } else if (actualPage >= totalPage - numberOfElementPage / 2) {
                 from = totalPage - numberOfElementPage + 1;
-                to = numberOfElementPage;
-            }
-            else {
-                from = actualPage - numberOfElementPage/2;
-                to = numberOfElementPage;
+                to = totalPage;
+            } else {
+                from = actualPage - numberOfElementPage / 2;
+                to = actualPage + numberOfElementPage / 2;
             }
         }
-        for (int i = 0; i < from; i++) {
-            pages.add(new PageItem(from + 1, actualPage == from + i));
+
+        // Generar los números de página correctamente
+        for (int i = from; i <= to; i++) {
+            boolean isActual = (i == actualPage);
+            pages.add(new PageItem(i, isActual));
         }
     }
-
     public boolean isLast() {
         return page.isLast();
     }
