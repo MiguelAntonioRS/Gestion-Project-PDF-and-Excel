@@ -65,6 +65,7 @@ public class EmployeeController {
 
     @PostMapping("/form")
     public String saveEmployee(@Valid Employee employee, BindingResult result, Model model, RedirectAttributes flash, SessionStatus status) {
+
         if (result.hasErrors()) {
             model.addAttribute("title", "Registro de Empleados");
             return "form";
@@ -97,5 +98,15 @@ public class EmployeeController {
         model.put("empleado", employee);
         model.put("title", "Edicion de Empleados");
         return "form";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteEmployee(@PathVariable(value = "id") Long id, RedirectAttributes flash) {
+
+        if (id > 0) {
+            employeeService.delete(id);
+            flash.addFlashAttribute("success", "Cliente eliminado con exito");
+        }
+        return "redirect:/register";
     }
 }
