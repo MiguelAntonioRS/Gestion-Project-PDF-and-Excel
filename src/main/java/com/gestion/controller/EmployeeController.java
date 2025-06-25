@@ -10,13 +10,32 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Map;
 
 @Controller
 public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
+
+    @GetMapping("/show/{id}")
+    public String seeDetailsEmployee(@PathVariable(value = "id") Long id, Map<String, Object> model, RedirectAttributes flash) {
+
+        Employee employee = employeeService.findById(id);
+        if (employee == null) {
+            flash.addFlashAttribute("Error", "El empleado no Existe");
+            return "redirect:/register";
+        }
+
+        model.put("Empleado", employee);
+        model.put("title", "Detalles del Empleado " + employee.getName());
+
+        return "details";
+    }
 
     @GetMapping({"/","/register",""})
     public String employeeList(@RequestParam(name = "page", defaultValue = "0") int page, Model model) {
