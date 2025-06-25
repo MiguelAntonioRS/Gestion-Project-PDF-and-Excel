@@ -49,4 +49,14 @@ public class EmployeeController {
 
         return "register";
     }
+
+    @GetMapping("/form")
+    public String showForm(Map<String, Object> model) {
+
+        Employee employee = new Employee();
+        model.put("Empleado", employee);
+        model.put("title", "Registro de Empleados");
+
+        return "form";
+    }
 }
