@@ -57,7 +57,7 @@ public class EmployeeController {
     public String showForm(Map<String, Object> model) {
 
         Employee employee = new Employee();
-        model.put("Empleado", employee);
+        model.put("empleado", employee);
         model.put("title", "Registro de Empleados");
 
         return "form";
@@ -76,5 +76,26 @@ public class EmployeeController {
         status.setComplete();
         flash.addFlashAttribute("success", message);
         return "redirect:/register";
+    }
+
+    @GetMapping("/form/{id}")
+    public String editEmployee(@PathVariable(value = "id") Long id, Map<String, Object> model, RedirectAttributes flash) {
+
+        Employee employee = null;
+        if (id > 0) {
+            employee = employeeService.findById(id);
+            if (employee == null) {
+                flash.addFlashAttribute("Error", "El ID del empleado no existe en la base de datos");
+                return "redirect:/register";
+            }
+        }
+        else {
+            flash.addFlashAttribute("Error", "El ID del empleado no puede ser cero");
+            return "redirect:/register";
+        }
+
+        model.put("empleado", employee);
+        model.put("title", "Edicion de Empleados");
+        return "form";
     }
 }
