@@ -34,7 +34,7 @@ public class EmployeeController {
             return "redirect:/register";
         }
 
-        model.put("Empleado", employee);
+        model.put("employee", employee);
         model.put("title", "Detalles del Empleado " + employee.getName());
 
         return "details";
@@ -57,7 +57,7 @@ public class EmployeeController {
     public String showForm(Map<String, Object> model) {
 
         Employee employee = new Employee();
-        model.put("empleado", employee);
+        model.put("employee", employee);
         model.put("title", "Registro de Empleados");
 
         return "form";
@@ -95,7 +95,7 @@ public class EmployeeController {
             return "redirect:/register";
         }
 
-        model.put("empleado", employee);
+        model.put("employee", employee);
         model.put("title", "Edicion de Empleados");
         return "form";
     }

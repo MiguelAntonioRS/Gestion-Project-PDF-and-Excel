@@ -7,12 +7,18 @@
 
     <header th:replace="Base/base :: header"></header>
 
-    <br>
-
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-                <h1 class="text center" th:text="${title}"></h1>
+            <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card mt-1">
+                <h1 class="text-center" th:text="${title}"></h1>
+                <div class="card-body">
+                    <form th:action="@{/form}" th:object="${employee}" method="post">
+                        <input type="hidden" th:field="*{id}" th:value="${employee.id}">
+                        <label>Nombre : </label>
+                        <input type="text" th:field="*{name}" class="form-control" th:errorclass="'form-control alert-danger'">
+                        <small class="form-text text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
