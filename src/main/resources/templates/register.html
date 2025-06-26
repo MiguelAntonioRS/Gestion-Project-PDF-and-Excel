@@ -42,7 +42,7 @@
                                 <td th:text="${employee.salary}"></td>
                                 <td><a class="btn btn-info btn-sm" th:href="@{/show/} + ${employee.id}">Detalles</a></td>
                                 <td><a class="btn btn-warning btn-sm" th:href="@{/form/} + ${employee.id}">Editar</a></td>
-                                <td><a class="btn btn-danger btn-sm" th:href="@{/delete/} + ${employee.id}">Eliminar</a></td>
+                                <td><a class="btn btn-danger btn-sm" th:href="@{/delete/} + ${employee.id}" onclick="return confirm('Estas seguro de eliminar el Empleado?');">Eliminar</a></td>
                             </tr>
                         </tbody>
                     </table>
