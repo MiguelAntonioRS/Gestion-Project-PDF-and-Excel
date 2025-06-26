@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="Base/base :: head">
+    <meta charset="UTF-8">
 </head>
 <body>
-$END$
+
+    <header th:replace="Base/base :: header"></header>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                <h1 class="text center" th:text="${title}"></h1>
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace="Base/base :: footer"></footer>
 </body>
 </html>
