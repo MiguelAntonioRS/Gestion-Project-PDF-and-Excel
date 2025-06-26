@@ -14,9 +14,16 @@
                 <div class="card-body">
                     <form th:action="@{/form}" th:object="${employee}" method="post">
                         <input type="hidden" th:field="*{id}" th:value="${employee.id}">
-                        <label>Nombre : </label>
-                        <input type="text" th:field="*{name}" class="form-control" th:errorclass="'form-control alert-danger'">
-                        <small class="form-text text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+                        <div class="form-group">
+                            <label>Nombre : </label>
+                            <input type="text" th:field="*{name}" class="form-control" th:errorclass="'form-control alert-danger'">
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></small>
+                        </div>
+                        <div class="form-group">
+                            <label>Apellido : </label>
+                            <input type="text" th:field="*{lastName}" class="form-control" th:errorclass="'form-control alert-danger'">
+                            <small class="form-text text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></small>
+                        </div>
                     </form>
                 </div>
             </div>
