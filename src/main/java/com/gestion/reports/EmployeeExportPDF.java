@@ -56,6 +56,15 @@ public class EmployeeExportPDF {
     }
 
     private void writeDataTable(PdfPTable table) {
-        
+        for (Employee employee : employeeList) {
+            table.addCell(String.valueOf(employee.getId()));
+            table.addCell(employee.getName());
+            table.addCell(employee.getLastName());
+            table.addCell(employee.getEmail());
+            table.addCell(employee.getDate().toString());
+            table.addCell(String.valueOf(employee.getPhone()));
+            table.addCell(employee.getSex());
+            table.addCell(String.valueOf(employee.getSalary()));
+        }
     }
 }
