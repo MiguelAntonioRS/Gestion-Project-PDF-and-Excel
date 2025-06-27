@@ -1,2 +1,4 @@
-package com.gestion.reports;public class EmployeeExportPDF {
+package com.gestion.reports;
+
+public class EmployeeExportPDF {
 }
