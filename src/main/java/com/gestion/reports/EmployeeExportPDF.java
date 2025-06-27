@@ -54,4 +54,8 @@ public class EmployeeExportPDF {
         cell.setPhrase(new Phrase("Salario", font));
         table.addCell(cell);
     }
+
+    private void writeDataTable(PdfPTable table) {
+        
+    }
 }
