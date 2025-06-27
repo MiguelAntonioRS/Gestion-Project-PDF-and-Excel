@@ -49,4 +49,16 @@ Whether you're building reports, invoices, or exporting data from your backend, 
 git clone https://github.com/MiguelAntonioRS/Gestion-Project-PDF-and-Excel.git 
 cd Gestion-Project-PDF-and-Excel
 ```
-### 
+### Run the Application
+```bash
+./mvnw spring-boot:run
+```
+
+## 🌟 Contributing 
+
+Contributions are welcome! If you have any ideas, improvements, or bug fixes, feel free to open an issue or submit a pull request.
+
+## 📬 Contact 
+
+Have questions or feedback?
+👉 Open an issue on GitHub or reach out to the repository owner.
