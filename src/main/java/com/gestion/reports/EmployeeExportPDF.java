@@ -65,6 +65,10 @@ public class EmployeeExportPDF {
             table.addCell(String.valueOf(employee.getPhone()));
             table.addCell(employee.getSex());
             table.addCell(String.valueOf(employee.getSalary()));
-        } 
+        }
+    }
+
+    public void export() {
+        
     }
 }
