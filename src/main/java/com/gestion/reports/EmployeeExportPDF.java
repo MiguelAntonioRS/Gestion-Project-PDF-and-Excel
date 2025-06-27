@@ -2,8 +2,9 @@ package com.gestion.reports;
 
 import com.gestion.entity.Employee;
 import com.lowagie.text.FontFactory;
+import com.lowagie.text.Phrase;
 import com.lowagie.text.pdf.PdfPCell;
-import com.lowagie.text.pdf.PdfTable;
+import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.Font;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,7 +21,7 @@ public class EmployeeExportPDF {
 
     private List<Employee> employeeList;
 
-    private void writeHeaderTable(PdfTable table) {
+    private void writeHeaderTable(PdfPTable table) {
         PdfPCell cell = new PdfPCell();
 
         cell.setBackgroundColor(Color.RED);
@@ -28,5 +29,29 @@ public class EmployeeExportPDF {
 
         Font font = FontFactory.getFont(FontFactory.HELVETICA);
         font.setColor(Color.WHITE);
+
+        cell.setPhrase(new Phrase("ID", font));
+        table.addCell(cell);
+
+        cell.setPhrase(new Phrase("Nombre", font));
+        table.addCell(cell);
+
+        cell.setPhrase(new Phrase("Apellido", font));
+        table.addCell(cell);
+
+        cell.setPhrase(new Phrase("Email", font));
+        table.addCell(cell);
+
+        cell.setPhrase(new Phrase("Fecha", font));
+        table.addCell(cell);
+
+        cell.setPhrase(new Phrase("Telefono", font));
+        table.addCell(cell);
+
+        cell.setPhrase(new Phrase("Sexo", font));
+        table.addCell(cell);
+
+        cell.setPhrase(new Phrase("Salario", font));
+        table.addCell(cell);
     }
 }
