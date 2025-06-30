@@ -5,12 +5,14 @@ import com.lowagie.text.*;
 import com.lowagie.text.Font;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
+import com.lowagie.text.pdf.PdfWriter;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.awt.*;
+import java.io.IOException;
 import java.util.List;
 
 @AllArgsConstructor
@@ -68,8 +70,10 @@ public class EmployeeExportPDF {
         }
     }
 
-    public void export(HttpServletResponse response) {
+    public void export(HttpServletResponse response) throws DocumentException, IOException {
         Document document = new Document(PageSize.A4);
-        
+        PdfWriter.getInstance(document, response.getOutputStream());
+
+        document.open();
     }
 }
