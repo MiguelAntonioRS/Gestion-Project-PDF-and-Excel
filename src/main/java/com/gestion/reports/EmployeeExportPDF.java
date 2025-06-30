@@ -1,11 +1,11 @@
 package com.gestion.reports;
 
 import com.gestion.entity.Employee;
-import com.lowagie.text.FontFactory;
-import com.lowagie.text.Phrase;
+import com.lowagie.text.*;
+import com.lowagie.text.Font;
 import com.lowagie.text.pdf.PdfPCell;
 import com.lowagie.text.pdf.PdfPTable;
-import com.lowagie.text.Font;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -68,7 +68,8 @@ public class EmployeeExportPDF {
         }
     }
 
-    public void export() {
-
+    public void export(HttpServletResponse response) {
+        Document document = new Document(PageSize.A4);
+        
     }
 }
