@@ -78,5 +78,8 @@ public class EmployeeExportPDF {
 
         Font font = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
         font.setColor(Color.GREEN);
+        font.setSize(18);
+
+        Paragraph title = new Paragraph();
     }
 }
