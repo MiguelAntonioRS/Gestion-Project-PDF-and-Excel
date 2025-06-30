@@ -26,7 +26,7 @@ public class EmployeeExportPDF {
     private void writeHeaderTable(PdfPTable table) {
         PdfPCell cell = new PdfPCell();
 
-        cell.setBackgroundColor(Color.RED);
+        cell.setBackgroundColor(Color.GREEN);
         cell.setPadding(5);
 
         Font font = FontFactory.getFont(FontFactory.HELVETICA);
@@ -75,5 +75,8 @@ public class EmployeeExportPDF {
         PdfWriter.getInstance(document, response.getOutputStream());
 
         document.open();
+
+        Font font = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
+        font.setColor(Color.GREEN);
     }
 }
