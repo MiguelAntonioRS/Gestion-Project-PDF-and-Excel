@@ -80,6 +80,8 @@ public class EmployeeExportPDF {
         font.setColor(Color.GREEN);
         font.setSize(18);
 
-        Paragraph title = new Paragraph();
+        Paragraph title = new Paragraph("Lista de Empleados", font);
+        title.setAlignment(Paragraph.ALIGN_CENTER);
+        document.add(title);
     }
 }
