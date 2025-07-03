@@ -88,5 +88,12 @@ public class EmployeeExportPDF {
         table.setWidthPercentage(100);
         table.setSpacingBefore(15);
         table.setWidths(new float[] {1f, 2.3f, 2.3f, 6f, 2.9f, 3.5f, 2f, 2.2f});
+        table.setWidthPercentage(110);
+
+        writeHeaderTable(table);
+        writeDataTable(table);
+
+        document.add(table);
+        document.close();
     }
 }
