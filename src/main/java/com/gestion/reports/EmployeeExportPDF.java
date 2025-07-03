@@ -83,5 +83,8 @@ public class EmployeeExportPDF {
         Paragraph title = new Paragraph("Lista de Empleados", font);
         title.setAlignment(Paragraph.ALIGN_CENTER);
         document.add(title);
+
+        PdfPTable table = new PdfPTable(8);
+        table.setWidthPercentage(100);
     }
 }
