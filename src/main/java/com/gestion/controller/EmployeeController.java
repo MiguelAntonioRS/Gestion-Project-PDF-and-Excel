@@ -3,6 +3,7 @@ package com.gestion.controller;
 import com.gestion.entity.Employee;
 import com.gestion.pagination.PageRender;
 import com.gestion.service.EmployeeService;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -108,5 +109,10 @@ public class EmployeeController {
             flash.addFlashAttribute("success", "Cliente eliminado con exito");
         }
         return "redirect:/register";
+    }
+
+    @GetMapping("/exportPDF")
+    public void exportEmployeePdf(HttpServletResponse response) {
+
     }
 }
