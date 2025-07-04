@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Map;
 
 @Controller
@@ -113,6 +116,8 @@ public class EmployeeController {
 
     @GetMapping("/exportPDF")
     public void exportEmployeePdf(HttpServletResponse response) {
+        response.setContentType("application/pdf");
 
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
     }
 }
