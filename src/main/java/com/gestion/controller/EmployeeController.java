@@ -22,6 +22,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -124,5 +125,9 @@ public class EmployeeController {
 
         String header = "Content-disposition";
         String value = "attachment; filename=Empleados_" + actualDate + ".pdf";
+
+        response.setHeader(header, value);
+
+        List<Employee> employees = employeeService.findAll();
     }
 }
