@@ -21,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 @Controller
@@ -119,5 +120,9 @@ public class EmployeeController {
         response.setContentType("application/pdf");
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+        String actualDate = dateFormat.format(new Date());
+
+        String header = "Content-disposition";
+        String value = "attachment; filename=Empleados_" + actualDate + ".pdf";
     }
 }
