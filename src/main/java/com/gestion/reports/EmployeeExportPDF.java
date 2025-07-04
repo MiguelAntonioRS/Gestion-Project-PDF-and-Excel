@@ -77,7 +77,7 @@ public class EmployeeExportPDF {
         document.open();
 
         Font font = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
-        font.setColor(Color.GRAY);
+        font.setColor(Color.BLACK);
         font.setSize(18);
 
         Paragraph title = new Paragraph("Lista de Empleados", font);
