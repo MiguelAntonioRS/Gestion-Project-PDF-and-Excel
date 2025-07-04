@@ -26,7 +26,7 @@ public class EmployeeExportPDF {
     private void writeHeaderTable(PdfPTable table) {
         PdfPCell cell = new PdfPCell();
 
-        cell.setBackgroundColor(Color.GREEN);
+        cell.setBackgroundColor(Color.BLACK);
         cell.setPadding(5);
 
         Font font = FontFactory.getFont(FontFactory.HELVETICA);
@@ -77,7 +77,7 @@ public class EmployeeExportPDF {
         document.open();
 
         Font font = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
-        font.setColor(Color.GREEN);
+        font.setColor(Color.GRAY);
         font.setSize(18);
 
         Paragraph title = new Paragraph("Lista de Empleados", font);
