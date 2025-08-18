@@ -13,8 +13,8 @@ public class EmployeeExportExcel {
     private List<Employee> employeeList;
 
     public EmployeeExportExcel(XSSFWorkbook book, XSSFSheet paper, List<Employee> employeeList) {
-        this.book = book;
-        this.paper = paper;
         this.employeeList = employeeList;
+        book = new XSSFWorkbook();
+        paper = book.createSheet("Empleados");
     }
 }
