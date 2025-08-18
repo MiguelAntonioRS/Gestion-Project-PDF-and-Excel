@@ -1,6 +1,7 @@
 package com.gestion.reports;
 
 import com.gestion.entity.Employee;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.util.List;
@@ -16,5 +17,9 @@ public class EmployeeExportExcel {
         this.employeeList = employeeList;
         book = new XSSFWorkbook();
         paper = book.createSheet("Empleados");
+    }
+
+    private void writeHeaderTable() {
+        Row row = paper.createRow(0);
     }
 }
