@@ -1,6 +1,7 @@
 package com.gestion.reports;
 
 import com.gestion.entity.Employee;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFFont;
@@ -29,5 +30,9 @@ public class EmployeeExportExcel {
         font.setBold(true);
         font.setFontHeight(16);
         cellStyle.setFont(font);
+
+        Cell cell = row.createCell(0);
+        cell.setCellValue("ID");
+        cell.setCellStyle(cellStyle);
     }
 }
