@@ -26,5 +26,8 @@ public class EmployeeExportExcel {
 
         CellStyle cellStyle = book.createCellStyle();
         XSSFFont font = book.createFont();
+        font.setBold(true);
+        font.setFontHeight(16);
+        cellStyle.setFont(font);
     }
 }
