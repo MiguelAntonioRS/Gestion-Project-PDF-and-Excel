@@ -63,4 +63,8 @@ public class EmployeeExportExcel {
         cell.setCellValue("Salario");
         cell.setCellStyle(cellStyle);
     }
+
+    private void writeDataTable() {
+
+    }
 }
