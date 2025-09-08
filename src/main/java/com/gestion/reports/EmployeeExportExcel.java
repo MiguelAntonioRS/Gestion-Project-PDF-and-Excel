@@ -34,5 +34,33 @@ public class EmployeeExportExcel {
         Cell cell = row.createCell(0);
         cell.setCellValue("ID");
         cell.setCellStyle(cellStyle);
+
+        cell = row.createCell(1);
+        cell.setCellValue("Nombre");
+        cell.setCellStyle(cellStyle);
+
+        cell = row.createCell(2);
+        cell.setCellValue("Apellido");
+        cell.setCellStyle(cellStyle);
+
+        cell = row.createCell(3);
+        cell.setCellValue("Email");
+        cell.setCellStyle(cellStyle);
+
+        cell = row.createCell(4);
+        cell.setCellValue("Fecha");
+        cell.setCellStyle(cellStyle);
+
+        cell = row.createCell(5);
+        cell.setCellValue("Telefono");
+        cell.setCellStyle(cellStyle);
+
+        cell = row.createCell(6);
+        cell.setCellValue("Sexo");
+        cell.setCellStyle(cellStyle);
+
+        cell = row.createCell(7);
+        cell.setCellValue("Salario");
+        cell.setCellStyle(cellStyle);
     }
 }
