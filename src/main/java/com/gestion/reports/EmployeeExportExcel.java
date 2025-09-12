@@ -74,6 +74,11 @@ public class EmployeeExportExcel {
 
         for (Employee employee: employeeList) {
             Row row = paper.createRow(rowNumber ++);
+
+            Cell cell = row.createCell(0);
+            cell.setCellValue(employee.getId());
+            paper.autoSizeColumn(0);
+            cell.setCellStyle(style);
         }
     }
 }
