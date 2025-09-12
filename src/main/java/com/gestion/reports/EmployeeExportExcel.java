@@ -65,6 +65,9 @@ public class EmployeeExportExcel {
     }
 
     private void writeDataTable() {
+        int rowNumber = 1;
 
+        CellStyle style = book.createCellStyle();
+        XSSFFont font = book.createFont();
     }
 }
