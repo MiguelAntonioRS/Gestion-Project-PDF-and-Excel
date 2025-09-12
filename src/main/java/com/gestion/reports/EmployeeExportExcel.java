@@ -94,6 +94,11 @@ public class EmployeeExportExcel {
             cell.setCellValue(employee.getEmail());
             paper.autoSizeColumn(3);
             cell.setCellStyle(style);
+
+            cell = row.createCell(4);
+            cell.setCellValue(employee.getDate());
+            paper.autoSizeColumn(4);
+            cell.setCellStyle(style);
         }
     }
 }
