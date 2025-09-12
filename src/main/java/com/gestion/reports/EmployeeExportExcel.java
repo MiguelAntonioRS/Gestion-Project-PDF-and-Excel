@@ -109,6 +109,11 @@ public class EmployeeExportExcel {
             cell.setCellValue(employee.getSex());
             paper.autoSizeColumn(6);
             cell.setCellStyle(style);
+
+            cell = row.createCell(7);
+            cell.setCellValue(employee.getSalary());
+            paper.autoSizeColumn(7);
+            cell.setCellStyle(style);
         }
     }
 }
