@@ -9,6 +9,8 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.IOException;
 import java.util.List;
 
 public class EmployeeExportExcel {
@@ -119,7 +121,7 @@ public class EmployeeExportExcel {
         }
     }
 
-    public void exportExcel(HttpServletResponse response) {
+    public void exportExcel(HttpServletResponse response) throws IOException {
         writeHeaderTable();
         writeDataTable();
 
