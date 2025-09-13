@@ -96,7 +96,7 @@ public class EmployeeExportExcel {
             cell.setCellStyle(style);
 
             cell = row.createCell(4);
-            cell.setCellValue(employee.getDate());
+            cell.setCellValue(employee.getDate().toString());
             paper.autoSizeColumn(4);
             cell.setCellStyle(style);
 
