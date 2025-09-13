@@ -119,6 +119,7 @@ public class EmployeeExportExcel {
     }
 
     public void exportExcel(HttpServletResponse response) {
-
+        writeHeaderTable();
+        writeDataTable();
     }
 }
