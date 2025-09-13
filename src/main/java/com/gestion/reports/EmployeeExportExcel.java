@@ -1,6 +1,7 @@
 package com.gestion.reports;
 
 import com.gestion.entity.Employee;
+import jakarta.servlet.http.HttpServletResponse;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
@@ -115,5 +116,9 @@ public class EmployeeExportExcel {
             paper.autoSizeColumn(7);
             cell.setCellStyle(style);
         }
+    }
+
+    public void exportExcel(HttpServletResponse response) {
+
     }
 }
