@@ -1,6 +1,7 @@
 package com.gestion.reports;
 
 import com.gestion.entity.Employee;
+import jakarta.servlet.ServletOutputStream;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
@@ -121,5 +122,11 @@ public class EmployeeExportExcel {
     public void exportExcel(HttpServletResponse response) {
         writeHeaderTable();
         writeDataTable();
+
+        ServletOutputStream outputStream = response.getOutputStream();
+        book.write(outputStream);
+
+        book.close();
+        outputStream.close();
     }
 }
