@@ -20,7 +20,7 @@ public class EmployeeExportExcel {
 
     private List<Employee> employeeList;
 
-    public EmployeeExportExcel(XSSFWorkbook book, XSSFSheet paper, List<Employee> employeeList) {
+    public EmployeeExportExcel(List<Employee> employeeList) {
         this.employeeList = employeeList;
         book = new XSSFWorkbook();
         paper = book.createSheet("Empleados");
