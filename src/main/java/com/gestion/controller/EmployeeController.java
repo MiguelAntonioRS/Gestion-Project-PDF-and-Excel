@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -120,6 +119,24 @@ public class EmployeeController {
 
     @GetMapping("/exportPDF")
     public void exportEmployeePdf(HttpServletResponse response) throws IOException {
+        response.setContentType("application/pdf");
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+        String actualDate = dateFormat.format(new Date());
+
+        String header = "Content-disposition";
+        String value = "attachment; filename=Empleados_" + actualDate + ".pdf";
+
+        response.setHeader(header, value);
+
+        List<Employee> employees = employeeService.findAll();
+
+        EmployeeExportPDF exportPDF = new EmployeeExportPDF(employees);
+        exportPDF.export(response);
+    }
+
+    @GetMapping("/exportPDF")
+    public void exportEmployeeExcel(HttpServletResponse response) throws IOException {
         response.setContentType("application/pdf");
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
