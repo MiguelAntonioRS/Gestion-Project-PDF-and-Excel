@@ -135,7 +135,7 @@ public class EmployeeController {
         exportPDF.export(response);
     }
 
-    @GetMapping("/exportPDF")
+    @GetMapping("/exportExcel")
     public void exportEmployeeExcel(HttpServletResponse response) throws IOException {
         response.setContentType("application/pdf");
 
