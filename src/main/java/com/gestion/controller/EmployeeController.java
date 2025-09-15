@@ -2,6 +2,7 @@ package com.gestion.controller;
 
 import com.gestion.entity.Employee;
 import com.gestion.pagination.PageRender;
+import com.gestion.reports.EmployeeExportExcel;
 import com.gestion.reports.EmployeeExportPDF;
 import com.gestion.service.EmployeeService;
 import jakarta.servlet.http.HttpServletResponse;
@@ -149,7 +150,7 @@ public class EmployeeController {
 
         List<Employee> employees = employeeService.findAll();
 
-        EmployeeExportPDF exportPDF = new EmployeeExportPDF(employees);
-        exportPDF.export(response);
+        EmployeeExportExcel exportExcel = new EmployeeExportExcel(employees);
+        exportExcel.exportExcel(response);
     }
 }
