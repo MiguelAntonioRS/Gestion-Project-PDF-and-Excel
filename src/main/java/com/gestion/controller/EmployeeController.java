@@ -137,7 +137,7 @@ public class EmployeeController {
 
     @GetMapping("/exportExcel")
     public void exportEmployeeExcel(HttpServletResponse response) throws IOException {
-        response.setContentType("application/octec");
+        response.setContentType("application/octet-stream");
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
         String actualDate = dateFormat.format(new Date());
