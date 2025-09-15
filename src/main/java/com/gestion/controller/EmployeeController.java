@@ -143,7 +143,7 @@ public class EmployeeController {
         String actualDate = dateFormat.format(new Date());
 
         String header = "Content-disposition";
-        String value = "attachment; filename=Empleados_" + actualDate + ".pdf";
+        String value = "attachment; filename=Empleados_" + actualDate + ".xlsx";
 
         response.setHeader(header, value);
 
