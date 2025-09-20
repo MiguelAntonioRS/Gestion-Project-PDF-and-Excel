@@ -25,13 +25,13 @@ public class WebSecurityConfig {
     public UserDetailsService userDetailsService() {
         UserDetails user1 = User
                 .withUsername("Miguel")
-                .password("$2a$10$oLlZHL7uQKNmAwkRjHoelO46cgrJGaBIv2C.RvNTlNg8p0FZr1Aum")
+                .password("$2a$10$Cmn2ohK1VAbMVDOltY0fkOpiF7Q8v2/5TJzQ64KB95Y1Jem8nfyP2")
                 .roles("USER")
                 .build();
 
         UserDetails user2 = User
                 .withUsername("admin")
-                .password("$2a$10$oLlZHL7uQKNmAwkRjHoelO46cgrJGaBIv2C.RvNTlNg8p0FZr1Aum")
+                .password("$2a$10$Cmn2ohK1VAbMVDOltY0fkOpiF7Q8v2/5TJzQ64KB95Y1Jem8nfyP2")
                 .roles("ADMIN")
                 .build();
 
