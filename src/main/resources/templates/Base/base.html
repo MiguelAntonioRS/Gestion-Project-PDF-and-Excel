@@ -33,6 +33,9 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link">Bienvenido [[${#httpServletRequest.remoteUser}]]</a>
+                            <form class="d-flex" th:action="@{/logout}" method="post">
+                                <input class="btn btn-secondary" type="submit" value="Cerrar Sesion">
+                            </form>
                         </li>
                     </ul>
                 </div>
