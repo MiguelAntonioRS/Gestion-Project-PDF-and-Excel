@@ -5,8 +5,8 @@
 --- 
 
 ## ✅ Overview
-
-This project provides a clean and simple implementation for generating **PDF documents** and **Excel spreadsheets** using **Java 17**, **Spring Boot**, and popular libraries like **Apache POI** and **OpenPDF**. It's perfect for developers who want to integrate file export features into their applications.
+ 
+This project provides a clean and simple implementation for generating **PDF documents** and **Excel spreadsheets** using **Java 17**, **Spring Boot**, and po pular libraries like **Apache POI** and **OpenPDF**. It's perfect for developers who want to integrate file export features into their applications.
 
 Whether you're building reports, invoices, or exporting data from your backend, this project gives you a solid foundation to start with. 
 
